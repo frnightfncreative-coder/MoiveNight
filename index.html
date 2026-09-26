@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movie Night</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ░░ SIDEBAR ░░ -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-inner">
+
+      <!-- Logo mark -->
+      <div class="sidebar-logo">
+        <div class="logo-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="5 3 19 12 5 21 5 3"/>
+          </svg>
+        </div>
+        <span class="sidebar-wordmark">Movie Night</span>
+      </div>
+
+      <div class="sidebar-divider"></div>
+
+      <!-- Nav items -->
+      <ul class="nav-list">
+        <li class="nav-item active" data-tab="home">
+          <div class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9 22 9 12 15 12 15 22"/>
+            </svg>
+          </div>
+          <span class="nav-label">Home</span>
+        </li>
+        <li class="nav-item" data-tab="movies">
+          <div class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/>
+              <line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/>
+              <line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/>
+              <line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/>
+              <line x1="17" y1="7" x2="22" y2="7"/>
+            </svg>
+          </div>
+          <span class="nav-label">Movies</span>
+        </li>
+        <li class="nav-item" data-tab="tv">
+          <div class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="15" rx="2" ry="2"/>
+              <polyline points="17 2 12 7 7 2"/>
+            </svg>
+          </div>
+          <span class="nav-label">TV Shows</span>
+        </li>
+        <li class="nav-item" data-tab="family">
+          <div class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </div>
+          <span class="nav-label">Family</span>
+        </li>
+        <li class="nav-item" data-tab="sports">
+          <div class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 8v4l3 3"/>
+            </svg>
+          </div>
+          <span class="nav-label">Sports</span>
+        </li>
+        <li class="nav-item" data-tab="live">
+          <div class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="2"/>
+              <path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/>
+            </svg>
+          </div>
+          <span class="nav-label">Live TV</span>
+        </li>
+      </ul>
+
+      <div class="sidebar-spacer"></div>
+
+      <!-- Bottom profile -->
+      <div class="sidebar-profile">
+        <div class="avatar" id="sidebarAvatar">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+        </div>
+        <span class="nav-label profile-name" id="sidebarProfileName">Guest</span>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- ░░ MAIN CONTENT ░░ -->
+  <main class="main-content" id="mainContent">
+
+    <!-- Top bar -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <h1 class="page-title" id="pageTitle">Home</h1>
+      </div>
+      <div class="topbar-center">
+        <div class="search-wrap">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <input type="text" class="search-input" id="searchInput" placeholder="Search movies &amp; TV shows…" />
+          <button class="search-clear" id="searchClear">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+          <div class="search-dropdown" id="searchDropdown"></div>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <div class="profile-chip" id="profileChip">
+          <div class="avatar sm" id="topbarAvatar">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+            </svg>
+          </div>
+          <span id="topbarProfileName">Guest</span>
+          <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M1 1l4 4 4-4"/></svg>
+        </div>
+      </div>
+    </header>
+
+    <!-- Filter rail (shown on movies/tv) -->
+    <div class="filter-rail" id="filterRail" style="display:none;">
+      <div class="filter-chips" id="filterChips"></div>
+    </div>
+
+    <!-- ░░ TAB VIEWS ░░ -->
+
+    <!-- HOME TAB -->
+    <div class="tab-view active" id="tab-home">
+      <!-- Hero -->
+      <div class="hero-section" id="heroSection">
+        <div class="hero-backdrop" id="heroBackdrop"></div>
+        <div class="hero-scrim"></div>
+        <div class="hero-content" id="heroContent">
+          <div class="hero-skeleton">
+            <div class="skeleton-bar w60 h40 mb8"></div>
+            <div class="skeleton-bar w40 h14 mb6"></div>
+            <div class="skeleton-bar w70 h14 mb4"></div>
+            <div class="skeleton-bar w55 h14 mb20"></div>
+            <div class="skeleton-btns"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rows -->
+      <div class="rows-area" id="rowsArea">
+        <div class="loading-rows" id="loadingRows">
+          <div class="row-skeleton" style="--delay:0s"></div>
+          <div class="row-skeleton" style="--delay:.1s"></div>
+          <div class="row-skeleton" style="--delay:.2s"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOVIES TAB -->
+    <div class="tab-view" id="tab-movies">
+      <div class="browse-header">
+        <h2 class="browse-title">Movies</h2>
+        <div class="browse-controls">
+          <select class="pill-select" id="movieCategory">
+            <option value="popular">Popular</option>
+            <option value="top_rated">Top Rated</option>
+            <option value="now_playing">Now Playing</option>
+            <option value="upcoming">Upcoming</option>
+          </select>
+          <select class="pill-select" id="movieSort">
+            <option value="popularity.desc">Most Popular</option>
+            <option value="vote_average.desc">Highest Rated</option>
+            <option value="primary_release_date.desc">Newest</option>
+            <option value="original_title.asc">A–Z</option>
+          </select>
+          <button class="pill-toggle" id="movieMature">Rated R</button>
+        </div>
+      </div>
+      <div class="genre-pills" id="movieGenres"></div>
+      <div class="poster-grid" id="movieGrid"></div>
+      <div class="spinner-wrap" id="movieSpinner"><div class="spinner"></div></div>
+    </div>
+
+    <!-- TV TAB -->
+    <div class="tab-view" id="tab-tv">
+      <div class="browse-header">
+        <h2 class="browse-title">TV Shows</h2>
+        <div class="browse-controls">
+          <select class="pill-select" id="tvCategory">
+            <option value="popular">Popular</option>
+            <option value="top_rated">Top Rated</option>
+            <option value="airing_today">Airing Today</option>
+            <option value="on_the_air">On The Air</option>
+          </select>
+          <select class="pill-select" id="tvSort">
+            <option value="popularity.desc">Most Popular</option>
+            <option value="vote_average.desc">Highest Rated</option>
+            <option value="first_air_date.desc">Newest</option>
+            <option value="name.asc">A–Z</option>
+          </select>
+          <button class="pill-toggle" id="tvMature">TV-MA</button>
+        </div>
+      </div>
+      <div class="genre-pills" id="tvGenres"></div>
+      <div class="poster-grid" id="tvGrid"></div>
+      <div class="spinner-wrap" id="tvSpinner"><div class="spinner"></div></div>
+    </div>
+
+    <!-- FAMILY TAB -->
+    <div class="tab-view" id="tab-family">
+      <div class="browse-header">
+        <h2 class="browse-title">Family &amp; Kids</h2>
+        <div class="browse-controls">
+          <select class="pill-select" id="familyCategory">
+            <option value="popular">Popular</option>
+            <option value="top_rated">Top Rated</option>
+          </select>
+          <select class="pill-select" id="familySort">
+            <option value="popularity.desc">Most Popular</option>
+            <option value="vote_average.desc">Highest Rated</option>
+          </select>
+        </div>
+      </div>
+      <div class="poster-grid" id="familyGrid"></div>
+      <div class="spinner-wrap" id="familySpinner"><div class="spinner"></div></div>
+    </div>
+
+    <!-- SPORTS TAB -->
+    <div class="tab-view" id="tab-sports">
+      <div class="browse-header">
+        <h2 class="browse-title">Sports</h2>
+      </div>
+      <div class="empty-state">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity=".35">
+          <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+        </svg>
+        <p>Sports content available in the full app</p>
+      </div>
+    </div>
+
+    <!-- LIVE TAB -->
+    <div class="tab-view" id="tab-live">
+      <div class="browse-header">
+        <h2 class="browse-title">Live TV</h2>
+        <p class="browse-sub">Free public channels, available in the full desktop app.</p>
+      </div>
+      <div class="empty-state">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity=".35">
+          <circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/>
+        </svg>
+        <p>Live TV is available in the full desktop app</p>
+      </div>
+    </div>
+
+    <!-- SEARCH RESULTS TAB -->
+    <div class="tab-view" id="tab-search" style="display:none;">
+      <div class="browse-header">
+        <h2 class="browse-title" id="searchTitle">Results</h2>
+      </div>
+      <div class="poster-grid" id="searchGrid"></div>
+      <div class="spinner-wrap" id="searchSpinner"><div class="spinner"></div></div>
+    </div>
+
+  </main>
+
+  <!-- ░░ DETAIL MODAL ░░ -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal">
+      <button class="modal-close" id="modalClose">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="modal-backdrop" id="modalBackdrop"></div>
+      <div class="modal-scrim"></div>
+      <div class="modal-body">
+        <div class="modal-poster-wrap">
+          <img class="modal-poster" id="modalPoster" src="" alt="" />
+        </div>
+        <div class="modal-info">
+          <h2 class="modal-title" id="modalTitle"></h2>
+          <p class="modal-meta" id="modalMeta"></p>
+          <p class="modal-overview" id="modalOverview"></p>
+          <div class="modal-actions">
+            <button class="btn-primary" id="modalPlay">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              Watch Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ░░ PLAYER VIEW — full-page overlay ░░ -->
+  <div class="player-overlay" id="playerOverlay">
+
+    <!-- top chrome -->
+    <header class="player-topbar">
+      <button class="player-back-btn" id="playerBack">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+        <span>Back</span>
+      </button>
+      <div class="player-top-title" id="playerTopTitle"></div>
+      <div class="player-top-actions">
+        <button class="player-icon-btn" id="playerTheatre" title="Theatre mode">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="5" width="20" height="14" rx="2"/>
+          </svg>
+        </button>
+        <button class="player-icon-btn" id="playerFullscreen" title="Fullscreen">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- main layout -->
+    <div class="player-layout" id="playerLayout">
+
+      <!-- left: video + info -->
+      <div class="player-left">
+
+        <!-- video shell -->
+        <div class="player-video-shell" id="playerVideoShell">
+
+          <!-- poster shown before play — our button, our click, no ad trap -->
+          <div class="player-poster-shell" id="playerPosterShell">
+            <div class="player-poster-bg" id="playerPosterBg"></div>
+            <div class="player-poster-scrim"></div>
+            <button class="player-big-play" id="playerBigPlay">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+                <polygon points="5 3 19 12 5 21 5 3"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- iframe — stays empty until user hits play -->
+          <iframe
+            id="playerIframe"
+            class="player-iframe"
+            src=""
+            allowfullscreen
+            allow="autoplay; fullscreen; picture-in-picture"
+            referrerpolicy="no-referrer"
+            frameborder="0"
+            scrolling="no"
+            style="display:none;"
+          ></iframe>
+
+          <!-- source switcher bar -->
+          <div class="player-source-bar">
+            <span class="source-label">Source:</span>
+            <div class="source-btns" id="sourceBtns">
+              <button class="source-btn active" data-src="vidsrcxyz">VidSrc</button>
+              <button class="source-btn" data-src="2embed">2Embed</button>
+              <button class="source-btn" data-src="embedsu">Embed.su</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- info panel -->
+        <div class="player-info-panel">
+          <div class="player-info-left">
+            <h1 class="player-title" id="playerTitle"></h1>
+            <p class="player-meta" id="playerMeta"></p>
+          </div>
+          <div class="player-info-right">
+            <div class="player-rating" id="playerRating"></div>
+          </div>
+        </div>
+
+        <p class="player-overview" id="playerOverview"></p>
+
+        <!-- TV episode picker (hidden for movies) -->
+        <div class="player-episode-section" id="playerEpisodeSection" style="display:none;">
+          <div class="ep-picker-header">
+            <h3 class="ep-picker-title">Episodes</h3>
+            <select class="pill-select" id="seasonPicker"></select>
+          </div>
+          <div class="ep-list" id="episodeList"></div>
+        </div>
+
+      </div>
+
+      <!-- right: related sidebar -->
+      <div class="player-sidebar">
+        <h3 class="sidebar-section-title">More Like This</h3>
+        <div class="related-list" id="relatedList"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
